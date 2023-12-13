@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "e2e": "./node_modules/cypress/bin/cypress run --browser chrome --headless --spec cypress/e2e/webDriverUni/contact-us.cy.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
