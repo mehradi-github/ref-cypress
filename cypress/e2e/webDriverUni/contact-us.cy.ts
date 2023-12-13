@@ -19,6 +19,7 @@ describe("contact-us form", () => {
     cy.get('[name="last_name"]').type("blogs");
     cy.get("textarea.feedback-input").type("How do you It?");
     cy.get('[type="submit"]').click();
+    cy.get("body").contains("Error: all fields are required");
   });
   it.skip("Get element by tag name, attribute and value, id, class, multiple classes, tow diffrent attribute and xpath", () => {
     // By tag name
