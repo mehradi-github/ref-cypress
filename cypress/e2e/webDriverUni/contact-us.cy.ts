@@ -5,6 +5,12 @@ describe("contact-us form", () => {
   beforeEach(() => {
     cy.visit("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
   });
+  it.only("Should have `contact us` in title and url and check charset in document", () => {
+    cy.document().should("have.property", "charset").and("eq", "UTF-8");
+    cy.title().should("include", "WebDriver | Contact Us");
+    cy.url().should("include", "contactus");
+  });
+
   it("Should able to submit a submission via conatct-us form", () => {
     cy.get('[name="first_name"]').type("Joe");
     cy.get('[name="last_name"]').type("blogs");
@@ -21,7 +27,7 @@ describe("contact-us form", () => {
     cy.get('[type="submit"]').click();
     cy.get("body").contains("Error: all fields are required");
   });
-  it.skip("Get element by tag name, attribute and value, id, class, multiple classes, tow diffrent attribute and xpath", () => {
+  it("Get element by tag name, attribute and value, id, class, multiple classes, tow diffrent attribute and xpath", () => {
     // By tag name
     cy.get("textarea").type("By tag name");
     // By attribute and value
