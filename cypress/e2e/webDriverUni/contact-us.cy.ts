@@ -11,6 +11,7 @@ describe("contact-us form", () => {
     cy.get('[name="email"]').type("joe@test.com");
     cy.get("textarea.feedback-input").type("How do you It?");
     cy.get('[type="submit"]').click();
+    cy.get("h1").should("have.text", "Thank You for your Message!");
   });
 
   it("Should able to submit a submission via conatct-us form as all fields are required", () => {
@@ -18,8 +19,9 @@ describe("contact-us form", () => {
     cy.get('[name="last_name"]').type("blogs");
     cy.get("textarea.feedback-input").type("How do you It?");
     cy.get('[type="submit"]').click();
+    cy.get("body").contains("Error: all fields are required");
   });
-  it.only("Get element by tag name, attribute and value, id, class, multiple classes, tow diffrent attribute and xpath", () => {
+  it.skip("Get element by tag name, attribute and value, id, class, multiple classes, tow diffrent attribute and xpath", () => {
     // By tag name
     cy.get("textarea").type("By tag name");
     // By attribute and value
