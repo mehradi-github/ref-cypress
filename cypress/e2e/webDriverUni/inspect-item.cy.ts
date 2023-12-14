@@ -27,4 +27,13 @@ describe("Inspect Automation Test Store items using chain of commands", () => {
           });
     });
   });
+
+  it("Validate product thumbnail", () => {
+    cy.get(".thumbnail").as("p");
+    cy.get("@p").should("have.length", 16);
+    cy.get("@p")
+      .find(".productcart")
+      .invoke("attr", "title")
+      .should("include", "Add to Cart");
+  });
 });
