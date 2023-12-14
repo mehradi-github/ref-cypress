@@ -15,4 +15,16 @@ describe("Inspect Automation Test Store items using chain of commands", () => {
   it("Click on the first item using item index", () => {
     cy.get(".fixed_wrapper").find(".prdocutname").eq(0).click();
   });
+
+  it.only("Add specific product to basket", () => {
+    cy.get("a[href*='product/category&path=']").contains("Hair Care").click();
+    cy.get(".fixed_wrapper .prdocutname").each(($el, index, $list) => {
+      if ($el.text().includes("Curls to straight Shampoo"))
+        cy.wrap($el)
+          .click()
+          .then(($e) => {
+            cy.wrap($e).get(".cart").click();
+          });
+    });
+  });
 });
