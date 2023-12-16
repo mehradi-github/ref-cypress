@@ -3,7 +3,9 @@
 
 describe("contact-us form", () => {
   beforeEach(() => {
-    cy.visit("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
+    // cy.visit("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
+    cy.visit("https://www.webdriveruniversity.com");
+    cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
   });
   it.only("Should have `contact us` in title and url and check charset in document", () => {
     cy.document().should("have.property", "charset").and("eq", "UTF-8");
