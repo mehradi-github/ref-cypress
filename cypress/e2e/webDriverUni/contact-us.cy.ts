@@ -7,7 +7,7 @@ describe("contact-us form", () => {
     cy.visit("https://www.webdriveruniversity.com");
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
   });
-  it.only("Should have `contact us` in title and url and check charset in document", () => {
+  it("Should have `contact us` in title and url and check charset in document", () => {
     cy.document().should("have.property", "charset").and("eq", "UTF-8");
     cy.title().should("include", "WebDriver | Contact Us");
     cy.url().should("include", "contactus");
@@ -48,5 +48,27 @@ describe("contact-us form", () => {
     );
     // By xpath
     cy.xpath("//input[@name='first_name']").type("By xpath");
+  });
+});
+
+describe("Validate webdriveruni homepage links", () => {
+  it.only("Confirm links redirect to the correct pages", () => {
+    cy.visit("https://www.webdriveruniversity.com");
+    cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
+    cy.url().should("include", "contactus");
+
+    cy.go("back");
+    cy.reload();
+    cy.url().should("include", "https://www.webdriveruniversity.com");
+
+    cy.go("forward");
+    cy.url().should("include", "contactus");
+
+    cy.go("back");
+    cy.get("#login-portal")
+      .invoke("removeAttr", "target")
+      .click({ force: true });
+    cy.url().should("include", "Login-Portal");
+    cy.go("back");
   });
 });
