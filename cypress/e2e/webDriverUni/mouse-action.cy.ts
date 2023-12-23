@@ -14,4 +14,7 @@ describe("Test mouse actions", () => {
       .trigger("mousemove")
       .trigger("mouseup", { force: true });
   });
+  it.only("I should be able to perform a double mouse click", () => {
+    cy.get("#double-click").dblclick();
+  });
 });
