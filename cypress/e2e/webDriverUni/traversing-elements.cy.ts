@@ -4,7 +4,11 @@ describe("Traversing DOM elements in Cypress", () => {
     cy.visit("https://www.webdriveruniversity.com");
     cy.get("#data-table").invoke("removeAttr", "target").click({ force: true });
   });
-  it("children() to get the children of DOM elements", () => {});
+  it.only("children() to get the children of DOM elements", () => {
+    cy.get(".traversal-breadcrumb")
+      .children(".active")
+      .should("contain", "Contact Us");
+  });
 
   it("closest() to validate the closest ancestor DOM element", () => {});
 
