@@ -10,11 +10,13 @@ describe("Traversing DOM elements in Cypress", () => {
       .should("contain", "Contact Us");
   });
 
-  it.only("closest() to validate the closest ancestor DOM element", () => {
+  it("closest() to validate the closest ancestor DOM element", () => {
     cy.get(".traversal-badge").closest("ul").should("have.class", "list-group");
   });
 
-  it("eq() to retrieve a specific element based on index", () => {});
+  it.only("eq() to retrieve a specific element based on index", () => {
+    cy.get(".traversal-drinks-list > *").eq(2).should("contain", "Milk");
+  });
 
   it("filter() to retrieve DOM elements that match a specific selector", () => {});
 
