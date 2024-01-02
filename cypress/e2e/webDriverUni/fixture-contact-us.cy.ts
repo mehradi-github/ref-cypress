@@ -4,25 +4,17 @@ describe("Test Contact Us form via Automation Test Store", () => {
     cy.fixture("userDetails").as("user");
   });
   beforeEach(() => {
-    cy.visit("https://www.webdriveruniversity.com");
-    cy.get("a[href$='contact']")
-      .invoke("removeAttr", "target")
-      .click({ force: true });
+    cy.visit("https://webdriveruniversity.com");
+    cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
   });
   it("Should be able to submit a successful submission via contact us form", () => {
     cy.get("@user").then((user) => {
-      cy.get("#ContactUsFrm_first_name").type(user.first_name);
-      cy.get("#ContactUsFrm_email").type(user.email);
+      cy.get('[name="first_name"]').type(user.first_name);
+      cy.get('[name="last_name"]').type(user.last_name);
+      cy.get('[name="email"]').type(user.email);
     });
-    cy.get("#ContactUsFrm_email").should("have.attr", "name", "email");
-    cy.get("#ContactUsFrm_enquiry").type(
-      "Do you provide additional discount on bulk orders?"
-    );
-    cy.get("button[title='Submit']").click();
-    cy.get(".mb40 > :nth-child(3)").should(
-      "have.text",
-      "Your enquiry has been successfully sent to the store owner!"
-    );
-    cy.log("Test has completed!");
+    cy.get("textarea.feedback-input").type("How can I learn Cypress?");
+    cy.get('[type="submit"]').click();
+    cy.get("h1").should("have.text", "Thank You for your Message!");
   });
 });
