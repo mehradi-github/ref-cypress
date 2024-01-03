@@ -9,12 +9,14 @@ describe("Test Contact Us form via Automation Test Store", () => {
   });
   it("Should be able to submit a successful submission via contact us form", () => {
     cy.get("@user").then((user) => {
-      cy.get('[name="first_name"]').type(user.first_name);
-      cy.get('[name="last_name"]').type(user.last_name);
-      cy.get('[name="email"]').type(user.email);
+      cy.ContactForm_Submission(
+        user.first_name,
+        user.last_name,
+        user.email,
+        "How can I learn Cypress?",
+        "h1",
+        "Thank You for your Message!"
+      );
     });
-    cy.get("textarea.feedback-input").type("How can I learn Cypress?");
-    cy.get('[type="submit"]').click();
-    cy.get("h1").should("have.text", "Thank You for your Message!");
   });
 });
