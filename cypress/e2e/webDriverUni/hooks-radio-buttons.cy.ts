@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("Test File Upload via webdriveruni", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.navigateTo_Homepage();
     cy.get("#dropdown-checkboxes-radiobuttons")
       .invoke("removeAttr", "target")
       .click({ force: true });

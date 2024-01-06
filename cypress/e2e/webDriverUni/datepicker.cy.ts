@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("Handling data via webdriveruni", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.navigateTo_Homepage();
     cy.get("#datepicker").invoke("removeAttr", "target").click({ force: true });
     cy.get("#datepicker").click();
   });
