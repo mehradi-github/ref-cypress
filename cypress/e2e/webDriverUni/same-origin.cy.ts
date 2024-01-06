@@ -5,7 +5,7 @@ describe("contact-us form", () => {
   beforeEach(() => {});
 
   it("Validate visiting two diffrent domains via user actions", () => {
-    cy.visit("https://www.webdriveruniversity.com");
+    cy.visit("/");
     cy.get("#automation-test-store").invoke("removeAttr", "target").click();
   });
   it.only("Origin command", () => {

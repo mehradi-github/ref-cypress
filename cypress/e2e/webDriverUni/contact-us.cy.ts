@@ -4,7 +4,7 @@
 describe("contact-us form", () => {
   beforeEach(() => {
     // cy.visit("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
-    cy.visit("https://www.webdriveruniversity.com");
+    cy.visit("/");
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
   });
   it("Should have `contact us` in title and url and check charset in document", () => {
@@ -53,7 +53,7 @@ describe("contact-us form", () => {
 
 describe("Validate webdriveruni homepage links", () => {
   it.only("Confirm links redirect to the correct pages", () => {
-    cy.visit("https://www.webdriveruniversity.com");
+    cy.visit("/");
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
     cy.url().should("include", "contactus");
 

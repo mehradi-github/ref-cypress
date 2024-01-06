@@ -17,5 +17,10 @@ module.exports = defineConfig({
     experimentalSessionAndOrigin: true,
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 120000,
+    baseUrl: "https://webdriveruniversity.com",
+    env: {
+      first_name: "Sarah",
+      webdriveruni_homepage: "https://webdriveruniversity.com",
+    },
   },
 });
