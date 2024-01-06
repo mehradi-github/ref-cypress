@@ -2,7 +2,7 @@
 
 describe("Handle js alerts", () => {
   it("Confirm js alert contains the correct text", () => {
-    cy.visit("/");
+    cy.navigateTo_Homepage();
     cy.get("#popup-alerts")
       .invoke("removeAttr", "target")
       .click({ force: true });
@@ -13,7 +13,7 @@ describe("Handle js alerts", () => {
     });
   });
   it("Validate js confirm alert box works correctly when clicking ok", () => {
-    cy.visit("/");
+    cy.navigateTo_Homepage();
     cy.get("#popup-alerts")
       .invoke("removeAttr", "target")
       .click({ force: true });
@@ -25,7 +25,7 @@ describe("Handle js alerts", () => {
     cy.get("#confirm-alert-text").contains("You pressed OK!");
   });
   it.only("Validate js confirm alert box works correctly when clicking cancel", () => {
-    cy.visit("/");
+    cy.navigateTo_Homepage();
     cy.get("#popup-alerts")
       .invoke("removeAttr", "target")
       .click({ force: true });

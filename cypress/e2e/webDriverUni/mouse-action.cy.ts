@@ -2,7 +2,7 @@
 
 describe("Test mouse actions", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.navigateTo_Homepage();
     cy.get("#actions")
       .scrollIntoView()
       .invoke("removeAttr", "target")

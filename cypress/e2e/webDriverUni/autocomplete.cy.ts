@@ -2,7 +2,7 @@
 
 describe("Verify Autocomplete dropwdown lists via webdriveruni", () => {
   beforeEach(() => {
-    cy.visit("/");
+    cy.navigateTo_Homepage();
     cy.get("#autocomplete-textfield")
       .invoke("removeAttr", "target")
       .click({ force: true });

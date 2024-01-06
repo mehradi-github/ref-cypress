@@ -4,7 +4,7 @@ describe("Test Contact Us form via Automation Test Store", () => {
     cy.fixture("userDetails").as("user");
   });
   beforeEach(() => {
-    cy.visit("https://webdriveruniversity.com");
+    cy.navigateTo_Homepage();
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
   });
   it("Should be able to submit a successful submission via contact us form", () => {

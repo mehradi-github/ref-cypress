@@ -1,7 +1,7 @@
 /// <reference types="Cypress" />
 describe("Test Contact Us form via Automation Test Store", () => {
   beforeEach(() => {
-    cy.visit("https://webdriveruniversity.com");
+    cy.navigateTo_Homepage();
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
     cy.fixture("userDetails").as("user");
   });
