@@ -1,3 +1,4 @@
+import Homepage_PO from "../../support/pageObjects/webdriver-uni/Homepage_PO";
 /// <reference types="cypress"/>
 /// <reference types="cypress-xpath"/>
 
@@ -6,7 +7,10 @@ describe("contact-us form", () => {
     // cy.visit("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
     // cy.navigateTo_Homepage();
     // cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
-    cy.visit(Cypress.env("homepage") + "/Contact-Us/contactus.html");
+    // cy.visit(Cypress.env("homepage") + "/Contact-Us/contactus.html");
+    const homepage_PO = new Homepage_PO();
+    homepage_PO.visitHompage();
+    homepage_PO.clickOn_ContactUs_Button();
   });
   it("Should have `contact us` in title and url and check charset in document", () => {
     cy.document().should("have.property", "charset").and("eq", "UTF-8");
