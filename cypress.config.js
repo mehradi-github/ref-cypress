@@ -16,7 +16,7 @@ module.exports = defineConfig({
     chromeWebSecurity: false,
     experimentalSessionAndOrigin: true,
     defaultCommandTimeout: 10000,
-    pageLoadTimeout: 120000,
+    pageLoadTimeout: 150000,
     baseUrl: "https://webdriveruniversity.com",
     env: {
       first_name: "Sarah",
