@@ -3,6 +3,7 @@ import Homepage_PO from "../../support/pageObjects/webdriver-uni/Homepage_PO";
 /// <reference types="cypress-xpath"/>
 
 describe("contact-us form", () => {
+  cy.config("pageLoadTimeout", 20000);
   beforeEach(() => {
     // cy.visit("https://www.webdriveruniversity.com/Contact-Us/contactus.html");
     // cy.navigateTo_Homepage();
