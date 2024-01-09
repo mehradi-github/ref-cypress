@@ -6,9 +6,10 @@ class HomePage_PO {
     cy.get("#contact-us")
       .invoke("removeAttr", "target")
       .click({ force: true }, { timeout: 8000 })
-      .then(() => {
-        debugger;
-      });
+      .debug();
+    // .then(() => {
+    //   debugger;
+    // });
   }
 }
 export default HomePage_PO;
