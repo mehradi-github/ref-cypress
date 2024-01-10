@@ -10,6 +10,8 @@ class HomePage_PO {
     // .then(() => {
     //   debugger;
     // });
+    cy.screenshot();
+    cy.screenshot("Click on Countact us button");
   }
 }
 export default HomePage_PO;
