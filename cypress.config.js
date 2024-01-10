@@ -20,6 +20,7 @@ module.exports = defineConfig({
     baseUrl: "https://webdriveruniversity.com",
     screenshotOnRunFailure: true,
     trashAssetsBeforeRuns: true,
+    video: true,
     videoCompression: 32,
     env: {
       first_name: "Sarah",
