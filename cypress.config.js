@@ -18,6 +18,8 @@ module.exports = defineConfig({
     defaultCommandTimeout: 10000,
     pageLoadTimeout: 150000,
     baseUrl: "https://webdriveruniversity.com",
+    screenshotOnRunFailure: true,
+    trashAssetsBeforeRuns: true,
     env: {
       first_name: "Sarah",
       homepage: "https://webdriveruniversity.com",
