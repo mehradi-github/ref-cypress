@@ -22,6 +22,8 @@ module.exports = defineConfig({
     trashAssetsBeforeRuns: true,
     video: true,
     videoCompression: 32,
+    viewportHeight: 1080,
+    viewportWidth: 1920,
     env: {
       first_name: "Sarah",
       homepage: "https://webdriveruniversity.com",
