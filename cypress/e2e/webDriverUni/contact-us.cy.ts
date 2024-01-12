@@ -14,6 +14,8 @@ describe("contact-us form", () => {
     // cy.visit(Cypress.env("homepage") + "/Contact-Us/contactus.html");
     const homepage_PO = new Homepage_PO();
     homepage_PO.visitHompage();
+    cy.clearLocalStorage();
+    cy.clearCookie();
     cy.wait(3000);
     homepage_PO.clickOn_ContactUs_Button();
   });
