@@ -5,6 +5,11 @@
   "main": "index.js",
   "scripts": {
     "e2e": "./node_modules/cypress/bin/cypress run --browser chrome --headless --spec cypress/e2e/webDriverUni/contact-us.cy.ts",
+    "triggerAllTests-headless": "pnpx cypress run",
+    "triggerAllTests-headed": "pnpx cypress run --headed",
+    "triggerAllTests-chrome": "pnpx cypress run --browser chrome",
+    "triggerAllTests-dashboard": "pnpx cypress run --record --key 3025d595-10bc-4aad-91ed-5802e5896b45",
+    "triggerAllTests-webdriveruni": "pnpx cypress run --spec cypress/e2e/webdriver-uni/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
