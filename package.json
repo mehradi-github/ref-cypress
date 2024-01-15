@@ -11,7 +11,8 @@
     "triggerAllTests-dashboard": "pnpx cypress run --record --key 3025d595-10bc-4aad-91ed-5802e5896b45",
     "triggerAllTests-webdriveruni": "pnpx cypress run --spec cypress/e2e/webdriver-uni/*",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "junit-merge": "pnpx junit-merge -d cypress/results/junit/ -o cypress/results/junit/results.xml"
+    "junit-merge": "pnpx junit-merge -d cypress/results/junit/ -o cypress/results/junit/results.xml",
+    "delete-junit-report": "rm -rf  cypress/results/junit/results.xml"
   },
   "keywords": [],
   "author": "",
