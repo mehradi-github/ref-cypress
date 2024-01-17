@@ -16,7 +16,8 @@
     "delete-reults": "rm -rf cypress/results/* || true",
     "mochawesome-merge": "pnpx mochawesome-merge cypress/results/mochawesome/*.json > mochawesome.json && pnpx merge mochawesome.json",
     "delete-mochawesome-report": "rm -rf mochawesome-report/* || true",
-    "cypress-regression-pack": "pnpm run delete-reults && pnpm run delete-mochawesome-report && pnpm run triggerAllTests-headless && pnpm run mochawesome-merge"
+    "cypress-regression-pack": "pnpm run delete-reults && pnpm run delete-mochawesome-report && pnpm run triggerAllTests-headless && pnpm run mochawesome-merge",
+    "triggerAllTests-stagin": "pnpx cypress run --env configFile=staging"
   },
   "keywords": [],
   "author": "",
