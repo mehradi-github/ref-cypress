@@ -19,11 +19,20 @@ describe("contact-us form", () => {
     cy.wait(3000);
     homepage_PO.clickOn_ContactUs_Button();
   });
-  it("Should have `contact us` in title and url and check charset in document", () => {
-    cy.document().should("have.property", "charset").and("eq", "UTF-8");
-    cy.title().should("include", "WebDriver | Contact Us");
-    cy.url().should("include", "contactus");
-  });
+  it(
+    "Should have `contact us` in title and url and check charset in document",
+    {
+      retries: {
+        runMode: 2,
+        openMode: 2,
+      },
+    },
+    () => {
+      cy.document().should("have.property", "charset").and("eq", "UTF-8");
+      cy.title().should("include", "WebDriver | Contact Us");
+      cy.url().should("include", "contactus");
+    }
+  );
 
   it("Should able to submit a submission via conatct-us form", () => {
     cy.get('[name="first_name"]').type("Joe");
