@@ -1,5 +1,15 @@
 const { defineConfig } = require("cypress");
+const path = require("path");
+const fx = require("fs-extra");
 
+function getConfig(file) {
+  const p = path.resolve("cypress\\config", `${file}.json`);
+  if (!fs.existsSync(p)) {
+    console.log("No custom Config file found.");
+    return {};
+  }
+  return fs.readJson(p);
+}
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
