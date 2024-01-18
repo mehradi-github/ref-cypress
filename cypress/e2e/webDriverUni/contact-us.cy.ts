@@ -74,6 +74,10 @@ describe("contact-us form", () => {
 
 describe("Validate webdriveruni homepage links", () => {
   it.only("Confirm links redirect to the correct pages", () => {
+    if (Cypress.isBrowser("firefox")) {
+      cy.log("Firefox");
+    } else {
+    }
     cy.navigateTo_Homepage();
     cy.get("#contact-us").invoke("removeAttr", "target").click({ force: true });
     cy.url().should("include", "contactus");
