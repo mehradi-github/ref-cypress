@@ -1,0 +1,16 @@
+pipeline {
+    agent {
+        label "agent1"
+    }
+    tools{
+        nodejs 'node'
+    }
+
+    stages {
+        stage('Hello') {
+            steps {
+                sh 'node -v'
+            }
+        }
+    }
+}
