@@ -1,0 +1,15 @@
+pipeline {
+    agent {
+        label 'agent1'
+    }
+    tools {
+        nodejs 'node'
+    }
+    stages {
+        stage('Github') {
+            steps {
+               git credentialsId: 'jenkins-github', url: 'https://github.com/mehradi-github/ref-aes.git'
+            }
+        }
+    }
+}
