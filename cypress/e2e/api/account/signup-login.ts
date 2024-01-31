@@ -41,4 +41,17 @@ describe("Signup & Login", () => {
       .should("contain", "JavaScript")
       .and("contain", "cypress");
   });
+
+  it("Mock global feed data", () => {
+    cy.intercept("GET", "**/api/articles*", {
+      fixture: "testArticles.json",
+    }).as("articles");
+
+    cy.get(".nav").contains("Sign in").click();
+    cy.get("[placeholder='Email']").type(email);
+    cy.get("[placeholder='Password']").type(password);
+    cy.get("button").contains("Sign in").click();
+    cy.get(":nth-child(4) > .nav-link").contains(username);
+    cy.wait("@articles");
+  });
 });
