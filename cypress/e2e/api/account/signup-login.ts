@@ -28,12 +28,13 @@ describe("Signup & Login", () => {
     });
   });
 
-  it.only("Test Valid Login", () => {
-    cy.visit("https://angular.realworld.how/");
-    cy.get(".nav").contains("Sign in").click();
-    cy.get("[placeholder='Email']").type(email);
-    cy.get("[placeholder='Password']").type(password);
-    cy.get("button").contains("Sign in").click();
-    cy.get(":nth-child(4) > .nav-link").contains(username);
-  });
+  cy.intercept("GET", "**/tags", { fixture: "popularTags.json" });
+  cy.visit("https://angular.realworld.how/");
+  cy.get(".nav").contains("Sign in").click();
+  cy.get("[placeholder='Email']").type(email);
+  cy.get("[placeholder='Password']").type(password);
+  cy.get("button").contains("Sign in").click();
+  cy.get(":nth-child(4) > .nav-link").contains(username);
+
+  cy.get(".tag-list").should("contain", "JavaScript").and("contain", "cypress");
 });
