@@ -34,5 +34,12 @@ describe("Signup Test", () => {
         "Registration completed successfully."
       );
     });
+
+    it("Test valid login", () => {
+      cy.get("#email").type(email);
+      cy.get("#password").type(password);
+      cy.get("#loginButton").click();
+      cy.get(".fa-layers-counter").contains(0);
+    });
   });
 });
