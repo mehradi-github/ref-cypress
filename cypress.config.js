@@ -48,5 +48,6 @@ module.exports = defineConfig({
       first_name: "Sarah",
       homepage: "https://webdriveruniversity.com",
     },
+    experimentalStudio: true,
   },
 });
