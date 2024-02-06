@@ -18,3 +18,17 @@ for more detailes follow this link: [Install Vagrant](https://github.com/mehradi
 
 [Jenkins](https://github.com/mehradi-github/ref-jenkins?tab=readme-ov-file#using-jenkins-in-devops) is a self-contained, open source automation server which can be used to automate all sorts of tasks related to building, testing, and delivering or deploying software.
 For more detailes follow this link: [Installing Jenkins(LTS)](https://github.com/mehradi-github/ref-jenkins?tab=readme-ov-file#installing-jenkinslts) .
+
+## Installing extention for Cucumber
+
+Installing extention: Cucumber (Gherkin) Full Support
+edit file: ~/.config/Code/User/settings.json
+
+```json
+{
+  // ...
+  "cucumberautocomplete.customParameters": [],
+  "cucumberautocomplete.strictGherkinCompletion": true,
+  "cucumberautocomplete.steps": ["cypress/support/step_definiations/*.ts"]
+}
+```
