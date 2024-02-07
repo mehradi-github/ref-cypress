@@ -1,10 +1,12 @@
 const { defineConfig } = require("cypress");
 const path = require("path");
-const fx = require("fs-extra");
+const fs = require("fs-extra");
 const cucumber = require("cypress-cucumber-preprocessor").default;
+const browserify = require("@cypress/browserify-preprocessor");
 
-function getConfig(file) {
-  const p = path.resolve("cypress\\config", `${file}.json`);
+function getConfigurationByFile(file) {
+  const p = path.resolve("cypress/config", `${file}.json`);
+  console.log(p);
   if (!fs.existsSync(p)) {
     console.log("No custom Config file found.");
     return {};
@@ -14,10 +16,14 @@ function getConfig(file) {
 module.exports = defineConfig({
   e2e: {
     setupNodeEvents(on, config) {
-      on("file:preprocessor", cucumber());
+      const options = {
+        ...browserify.defaultOptions,
+        typescript: require.resolve("typescript"),
+      };
+      on("file:preprocessor", cucumber(options));
       // implement node event listeners here
       const file = config.env.configFile || "development";
-      return getConfig(file);
+      return getConfigurationByFile(file);
     },
     chromeWebSecurity: false,
     experimentalModifyObstructiveThirdPartyCode: true,
