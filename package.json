@@ -6,6 +6,7 @@
   "scripts": {
     "e2e": "./node_modules/cypress/bin/cypress run --browser chrome --headless --spec cypress/e2e/webDriverUni/contact-us.cy.ts",
     "triggerAllTests-stagin": "pnpx cypress run --env configFile=staging",
+    "openAllTests-stagin": "pnpx cypress open --browser chrome --env configFile=staging ",
     "triggerAllTests-headless": "pnpx cypress run",
     "triggerAllTests-headed": "pnpx cypress run --headed",
     "triggerAllTests-chrome": "pnpx cypress run --browser chrome",
@@ -24,19 +25,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@cypress/browserify-preprocessor": "^3.0.2",
     "@types/typescript": "^2.0.0",
     "cypress": "^13.6.1",
+    "cypress-cucumber-preprocessor": "^4.3.1",
     "cypress-multi-reporters": "^1.6.4",
     "cypress-xpath": "^2.0.1",
+    "junit-merge": "^2.0.0",
     "mocha-junit-reporter": "^2.2.1",
     "mochawesome": "^7.1.3",
     "mochawesome-merge": "^4.3.0",
     "mochawesome-report-generator": "^6.2.0",
     "typescript": "^5.3.3"
-  },
-  "dependencies": {
-    "cypress-cucumber-preprocessor": "^4.3.1",
-    "junit-merge": "^2.0.0"
   },
   "cypress-cucumber-preprocessor": {
     "nonGlobalStepDefinitions": false,
