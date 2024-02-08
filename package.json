@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "triggerAllTests-cucumberTest": "pnpx cypress run --browser chrome --env configFile=staging --spec cypress/e2e/features/*.feature",
     "e2e": "./node_modules/cypress/bin/cypress run --browser chrome --headless --spec cypress/e2e/webDriverUni/contact-us.cy.ts",
     "triggerAllTests-stagin": "pnpx cypress run --env configFile=staging",
     "openAllTests-stagin": "pnpx cypress open --browser chrome --env configFile=staging ",

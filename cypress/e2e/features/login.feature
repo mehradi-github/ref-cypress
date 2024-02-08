@@ -1,3 +1,4 @@
+@regression
 Feature: WebdriverUniversity Login Page
 
     # Scenario: Login using valid credentials
@@ -13,7 +14,7 @@ Feature: WebdriverUniversity Login Page
     #     And I enter a password webdriver555
     #     And I click on the login button
     #     Then I should be presented with the following message validation failed
-
+    @login
     Scenario Outline: Test Login via WebdriverUniversity Login Portal
         Given I access the WebdriverUniversity Login Portal page
         When I enter a username <username>
